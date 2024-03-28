@@ -24,7 +24,7 @@ createApp({
                 this.activeIndexSlide = this.slides.length -1;
             }
         },
-        goToSlide() {
+        goToSlide(index) {
             this.activeIndexSlide = index;
         }
     },
