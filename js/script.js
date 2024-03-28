@@ -1,4 +1,4 @@
-import {slides} from './data.js'
+import {slides} from './data.js';
 
 const {createApp} = Vue;
 
@@ -11,7 +11,7 @@ createApp({
     },
     methods: {
         nextSlide() {
-            if(this.activeIndexSlide < this-slides.length - 1) {
+            if(this.activeIndexSlide < this.slides.length - 1) {
                 this.activeIndexSlide++;
             } else {
                 this.activeIndexSlide = 0
@@ -29,6 +29,6 @@ createApp({
         }
     },
     mounted() {
-        setInterval(this.nextSlide, 1000);
+        setInterval(() => this.nextSlide(), 3000);
     }
 }).mount('#app');
