@@ -16,7 +16,7 @@
     <div id="app">
 
         <div class="container">
-            <div class="slider-wrapper" tabindex="0">
+            <div class="slider-wrapper" tabindex="0" @mouseenter="stopAutoplay" @mouseleave="startAutoplay">
 
                 <div class="item">
                     <img :src="slides[activeIndexSlide].image" :alt="slides[activeIndexSlide].title" />

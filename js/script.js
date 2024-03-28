@@ -2,6 +2,8 @@ import {slides} from './data.js';
 
 const {createApp} = Vue;
 
+let intervalId = null; // we use this variable to track the interval ID
+
 createApp({
     data(){
         return {
@@ -26,9 +28,15 @@ createApp({
         },
         goToSlide(index) {
             this.activeIndexSlide = index;
+        },
+        startAutoplay() {
+            intervalId = setInterval(this.nextSlide, 3000);
+        },
+        stopAutoplay() {
+            clearInterval(intervalId)
         }
     },
     mounted() {
-        setInterval(() => this.nextSlide(), 3000);
+        this.startAutoplay();
     }
 }).mount('#app');
